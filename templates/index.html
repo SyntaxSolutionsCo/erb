@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}ERB Services - Startseite{% endblock %}
+{% block content %}
+
+    <!-- Hero Slider Sekcija -->
+    <header class="hero-slider">
+        {% for img in bg_images %}
+        <div class="slide {% if loop.first %}active{% endif %}" style="background-image: url('{{ url_for('static', filename='images/' + img) }}');"></div>
+        {% endfor %}
+        <div class="hero-content">
+            <h1>Professionelle Umzüge & Services <span>schnell & stressfrei.</span></h1>
+            <p>Wir bieten zuverlässige und professionelle Dienstleistungen zu besten Preisen in Wien und Umgebung. Ihre Sachen sind bei uns in sicheren Händen.</p>
+            <a href="{{ url_for('kontakt') }}" class="btn">Angebot anfordern</a>
+        </div>
+    </header>
+
+    <!-- Kartice ispod hero dela -->
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-box-open fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+            <h3>Sorgfältiger Umgang</h3>
+            <p>Ihre Gegenstände werden mit höchster Vorsicht transportiert.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-clock fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+            <h3>Pünktlich & Zuverlässig</h3>
+            <p>Wir halten uns strikt an vereinbarte Termine.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-shield-alt fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+            <h3>Volle Sicherheit</h3>
+            <p>Professioneller Schutz und vollkommene Sicherheit.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-wallet fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+            <h3>Günstige Preise</h3>
+            <p>Das beste Preis-Leistungs-Verhältnis für Sie.</p>
+        </div>
+    </div>
+
+    <!-- O nama kratko -->
+    <section class="section">
+        <h2 class="section-title">Warum ERB Services wählen?</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+            Als erfahrenes Unternehmen in Wien bieten wir Ihnen umfassende Lösungen für Umzüge, Entrümpelungen, Transport und Reinigungsarbeiten. Vertrauen Sie auf unser professionelles Team und unseren modernen Fuhrpark.
+        </p>
+    </section>
+
+{% endblock %}

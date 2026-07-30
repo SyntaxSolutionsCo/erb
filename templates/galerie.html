@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}ERB Services - Galerie{% endblock %}
+{% block content %}
+
+    <section class="section">
+        <h2 class="section-title">Galerie</h2>
+        <div class="gallery-grid">
+            {% for img in images %}
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/' + img) }}" alt="ERB Services Galeriebild">
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Admin Login{% endblock %}
+{% block content %}
+<section class="section" style="max-width: 400px; margin: 50px auto;">
+    <h2 class="section-title">Admin Login</h2>
+    {% if error %}
+    <p style="color: red; text-align: center; margin-bottom: 15px;">{{ error }}</p>
+    {% endif %}
+    <form method="POST" style="background: var(--bg-light); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: bold;">Passwort:</label>
+            <input type="password" name="password" required style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+        </div>
+        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Anmelden</button>
+    </form>
+</section>
+{% endblock %}

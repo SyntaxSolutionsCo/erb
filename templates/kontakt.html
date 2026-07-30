@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}ERB Services - Kontakt{% endblock %}
+{% block content %}
+
+    <section class="section">
+        <h2 class="section-title">Kontaktieren Sie uns</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+            
+            <div>
+                <h3 style="color: var(--primary-color); margin-bottom: 20px;">Ihre Anlaufstelle in Wien</h3>
+                <p style="margin-bottom: 15px;"><i class="fas fa-map-marker-alt" style="color:var(--accent-color); width: 25px;"></i> <strong>Adresse:</strong> Schrickgasse 20/1, 1220 Wien</p>
+                <p style="margin-bottom: 15px;"><i class="fas fa-phone" style="color:var(--accent-color); width: 25px;"></i> <strong>Telefon:</strong> 0664 4316115</p>
+                <p style="margin-bottom: 15px;"><i class="fas fa-envelope" style="color:var(--accent-color); width: 25px;"></i> <strong>E-Mail:</strong> office@erb-services@gmail.com</p>
+                
+                <h3 style="color: var(--primary-color); margin: 30px 0 15px 0;">Öffnungszeiten</h3>
+                <ul style="list-style: none; line-height: 2;">
+                    <li><strong>Montag:</strong> 07:00 – 20:00 Uhr</li>
+                    <li><strong>Dienstag:</strong> 07:00 – 20:00 Uhr</li>
+                    <li><strong>Mittwoch:</strong> 07:00 – 20:00 Uhr</li>
+                    <li><strong>Donnerstag:</strong> 07:00 – 20:00 Uhr</li>
+                    <li><strong>Freitag:</strong> 07:00 – 20:00 Uhr</li>
+                    <li><strong>Samstag:</strong> 07:00 – 15:00 Uhr</li>
+                    <li><strong>Sonntag:</strong> Geschlossen</li>
+                </ul>
+            </div>
+
+            <div style="background: var(--bg-light); padding: 30px; border-radius: 10px;">
+                <h3 style="color: var(--primary-color); margin-bottom: 20px;">Schreiben Sie uns</h3>
+                <form>
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" placeholder="Ihr Name" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <input type="email" placeholder="Ihre E-Mail" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <textarea rows="5" placeholder="Ihre Nachricht / Anfrage" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Nachricht senden</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

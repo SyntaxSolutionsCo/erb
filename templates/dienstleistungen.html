@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}ERB Services - Dienstleistungen{% endblock %}
+{% block content %}
+
+    <section class="section">
+        <h2 class="section-title">Unsere Dienstleistungen</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <div class="feature-card" style="text-align: left;">
+                <i class="fas fa-truck-moving fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+                <h3>Umzüge (Selidbe)</h3>
+                <p>Professionelle und reibungslose Durchführung von Privat- und Firmenumzügen in Wien und ganz Österreich.</p>
+            </div>
+
+            <div class="feature-card" style="text-align: left;">
+                <i class="fas fa-broom fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+                <h3>Reinigung (Čišćenje)</h3>
+                <p>Gründliche Reinigung von Wohnungen, Büros sowie nach Umzügen oder Renovierungen für makellose Sauberkeit.</p>
+            </div>
+
+            <div class="feature-card" style="text-align: left;">
+                <i class="fas fa-truck fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+                <h3>Transport</h3>
+                <p>Zuverlässiger Warentransport, Möbeltransporte und Kurierdienste mit modern ausgestatteten Fahrzeugen.</p>
+            </div>
+
+            <div class="feature-card" style="text-align: left;">
+                <i class="fas fa-dumpster fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+                <h3>Entrümpelung (Pražnjenje stanova)</h3>
+                <p>Fachgerechte und schnelle Räumung von Wohnungen, Kellern, Dachböden inklusive umweltgerechter Entsorgung.</p>
+            </div>
+
+            <div class="feature-card" style="text-align: left;">
+                <i class="fas fa-snowflake fa-2x" style="color:#0056b3; margin-bottom:15px;"></i>
+                <h3>Winterdienst</h3>
+                <p>Zuverlässiger Winterdienst, Schneeräumung und Streudienst für Gehwege, Einfahrten und Parkflächen.</p>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

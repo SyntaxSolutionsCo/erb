@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<section class="section">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <h2 class="section-title" style="margin: 0;">Admin Dashboard - Galerie verwalten</h2>
+        <a href="{{ url_for('admin_logout') }}" class="btn" style="background: #dc3545;">Abmelden</a>
+    </div>
+
+    <div style="background: var(--bg-light); padding: 30px; border-radius: 10px; margin-bottom: 40px;">
+        <h3>Neues Bild zur Galerie hinzufügen</h3>
+        <form method="POST" enctype="multipart/form-data" style="margin-top: 15px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+            <input type="file" name="image" required style="padding: 10px; background: white; border: 1px solid #ccc; border-radius: 5px;">
+            <button type="submit" class="btn" style="border: none; cursor: pointer;">Bild hochladen</button>
+        </form>
+    </div>
+
+    <h3>Aktuelle Galerie Bilder</h3>
+    <div class="gallery-grid" style="margin-top: 20px;">
+        {% for img in images %}
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/' + img) }}" alt="Galerie Bild">
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

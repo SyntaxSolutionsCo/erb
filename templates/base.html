@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ERB Services - Zuverlässig & Professionell{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigacija -->
+    <nav>
+        <a href="{{ url_for('index') }}" class="logo-container">
+            <div class="logo-wrapper">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ERB Services Logo">
+            </div>
+            <span>ERB SERVICES</span>
+        </a>
+
+        <!-- Animirani kombi između naziva i tabova (kombi1.png / kombi2.png) -->
+        <div class="nav-van-container">
+            <img src="{{ url_for('static', filename='images/kombi1.png') }}" class="moving-van" id="navVan" alt="Moving Van">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Startseite</a></li>
+            <li><a href="{{ url_for('dienstleistungen') }}">Dienstleistungen</a></li>
+            <li><a href="{{ url_for('warum_wir') }}">Warum wir</a></li>
+            <li><a href="{{ url_for('galerie') }}">Galerie</a></li>
+            <li><a href="{{ url_for('kontakt') }}">Kontakt</a></li>
+            <li><a href="tel:06644316115" class="phone-btn"><i class="fas fa-phone"></i> 0664 4316115</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sadržaj stranice -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>ERB Services</strong></p>
+        <p>Schrickgasse 20/1, 1220 Wien | Tel: 0664 4316115 | E-Mail: office@erb-services@gmail.com</p>
+        <p>&copy; 2026 ERB Services. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <!-- Skripta za Slider pozadine i menjanje .png slika kombija pri kretanju -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        if(slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 4000);
+        }
+
+        // Dinamička promena PNG slike kombija zavisno od smera kretanja
+        const van = document.getElementById('navVan');
+        if(van) {
+            setInterval(() => {
+                setTimeout(() => { van.src = "{{ url_for('static', filename='images/kombi1.png') }}"; }, 0);
+                setTimeout(() => { van.src = "{{ url_for('static', filename='images/kombi2.png') }}"; }, 4300);
+            }, 8600);
+        }
+    </script>
+</body>
+</html>
